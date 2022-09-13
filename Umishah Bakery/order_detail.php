@@ -1,0 +1,38 @@
+<?php
+require_once("config.php");
+
+
+$db="umishah";
+//$result= mysqli_query($con,"SELECT name FROM tblproduct");
+//$productname=mysqli_fetch_array($result)
+$quantity=$_POST["quantity"];
+$flavour=$_POST["flav"];
+$size=$_POST["size"];
+
+
+	
+	$DB_HOST = "localhost"; 
+    $DB_DBNAME = "umishah"; 
+    $DB_USER = "root"; 
+    $DB_PWD = ""; 
+	
+	// 1. Create a database connection
+$connection = mysqli_connect($DB_HOST,$DB_USER,$DB_PWD,$DB_DBNAME);
+if (!$connection) {
+    die("Database connection failed");
+}
+
+// 2. Select a database to use 
+$db_select = mysqli_select_db($connection,$DB_DBNAME);
+if (!$db_select) {
+    die("Database selection failed: " . mysqli_error($connection));
+}
+	
+$sql = "INSERT INTO order_detail (name,quantity,flavour,size,) VALUES ('$productname','$quantity','$flavour','$size')";
+
+mysqli_query($connection, $sql);
+
+mysqli_close($connection);
+
+
+?>

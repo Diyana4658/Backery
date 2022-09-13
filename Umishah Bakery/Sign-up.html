@@ -1,0 +1,296 @@
+<html>
+
+<head>
+
+<title>SignUp For Umishah Bakery Online System</title>
+
+<style>
+
+body {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  max-width: 100%;
+}
+
+* {
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+font-weight: bold;
+color: #000000;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    transition: .3 linear;
+}
+body, button {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    //letter-spacing: 2px;
+}
+	body{}
+
+/* ======== Section ========  */
+section {
+    height: 100vh;
+}
+section:nth-of-type(odd) {
+    color: black;
+    background: #CAAE97
+}
+
+section:nth-of-type(even) {
+    color: rgba(255, 255, 255, 0.8);
+    background: #573E2F;
+}
+section .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 9%;
+    font-size: 4rem;
+}
+/* ======== Header ========  */
+#header {
+    /* position */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* flex layout */
+    display: flex;
+    justify-content: space-between;
+    //align-items: center;
+    padding: 2rem 10%;
+    /* style */
+    background: hsla(230, 8%, 15%, .9);
+    backdrop-filter: saturate(180%) blur(16px);
+    -wwbkit-backdrop-filter: saturate(180%) blur(16px); 
+    box-shadow: 0 6px 4px hsla(0, 4%, 15%, .2);
+}
+
+/* logo */
+.logo {
+    color: aliceblue;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.logo:hover {
+    color: hsl(29, 72%, 62%);
+}
+
+
+/* links */
+.navbar li {
+    display: inline-block;
+    padding-right: 3rem;
+}
+
+.navbar li a {
+    position: relative !important;
+    color: hsl(195, 12%, 94%, .7);
+    transition: all 0.3s ease .1s;
+}
+
+.navbar li a:hover {
+    /* color: #0088a9; */
+    color: hsla(195, 12%, 100%, 0.9);
+}
+nav ul li a::before,
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    right: 0;
+    left: auto;
+    width: 0;
+    height: 3px;
+}
+
+nav ul li a.menu::before {
+    background-color: #235aa6;
+    transition: all .25s cubic-bezier(.694, .048, .335, 1) .15s;
+}
+
+nav ul li a.menu::after {
+    background-color: #f25757;
+    transition: all .25s cubic-bezier(.694, .048, .335, 1);
+}
+
+nav ul li a:hover::after,
+nav ul li a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+
+/* button */
+a.button{
+    position: absolute;
+    right: 9%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 9px 25px;
+    color: #edf0f1;
+    background-color: #FFF9F2;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgba(64, 82, 90, 0.452);
+    color: #694F23;
+}
+	input
+{
+    padding: 12px;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 5px 10px;
+}
+	.contenu
+{
+    display: flex;
+    justify-content: center;
+    height: 70%;
+    align-items: center;
+}
+	article
+{
+    width: 460px;
+    text-align: center;
+}
+p
+{
+    font-size: 24px;
+}
+input[value="Log in"]
+{
+    background-color: #93603B;
+}
+input[value="Sign up"]
+{
+    color: black;
+    background-color: #93603B;
+}
+input[value="Log in"]:hover
+{
+  background: linear-gradient(to right,white,rgb(230, 226, 206));  
+}
+input[value="Sign up"]:hover
+{
+    background: linear-gradient(to right,white,rgb(230, 226, 206)); 
+}
+.divTotal
+{
+    display: none;
+}
+	table{margin-top: 80px;}
+	th, td {
+		background-color: #E7DFD8;
+  border: 1px solid black;
+  //border-radius: 10px;
+		margin-left: 130px;
+		width:100%;
+	padding:20px;
+	//color:#5F3478;
+		//background-color: rgba(255, 255, 255, 0.3);
+	position:center;} 
+
+
+</style>
+
+</head>
+
+<body>
+<header id='header'>
+  <div class='logo'>Umishah Bakery</div>
+  <nav>
+    <ul class='navbar'>
+      <li><a class="menu" href="index.html#home">Home</a></li>
+      <li><a class="menu" href="index.html#about">Menu</a></li>
+      <li><a class="menu" href="index.html#contact">Contact</a></li>
+	
+    </ul>
+  </nav>
+ 
+</header>
+
+	<section id='home'>
+  <div class='content'>
+   <div class="contenu">
+	<table width="200" border="1">
+  <tbody>
+    <tr>
+      <td>
+		  
+		<p>Please fill this form to create an account.</p><br>
+<form name='SignUpForm' method='POST' action='signUp.php'>
+
+Name:<br>
+	<input type='text' name='textbox1'size="40" style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your name' required><br>
+
+Username:<br>
+	<input type='text' name='id'size="30" style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your username' required><br>
+
+Password:<br>
+	<input type='password' name='pwd'size="20" style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your password' required><br>
+
+
+
+E-email:<br>
+	<input type='text' name='email'size="40" style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your E-mail' required><br>
+
+No. Tel:<br>
+	<input type='text' name='tel'size="20" style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your phone number' required><br>
+
+
+Address:<br>
+	<input type='text' name='add'size="50" style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your address' required><br>
+
+  <p align="center">
+    <input type="submit" name="Submit" value="SIGN UP">
+    <input type="reset" name="Submit2" value="RESET">
+  </p>
+
+</form>
+		
+		
+		
+		
+		</td>
+    </tr>
+  </tbody>
+</table>
+ 
+    </div>
+	
+	
+	
+	</div>
+</section>
+
+
+
+
+</body>
+</html>

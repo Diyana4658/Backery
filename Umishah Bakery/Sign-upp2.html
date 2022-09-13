@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sign-up</title>
+	<style>
+	* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  transition: 0.3s;
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(130deg, #fefefe, #ededed);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: white;
+  display: flex;
+  width: 800px;
+  border: 1px solid black;
+  box-shadow: 8px 8px 0 0 black;
+  position: relative;
+}
+
+.left, .right {
+  width: 400px;
+}
+
+.left {
+  padding: 40px 60px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+   width:90%;
+}
+
+.accept {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.accept input {
+  width: 15px;
+  margin-right: 10px;
+}
+
+img {
+  height: 700px;
+  padding: 40px 60px;
+}
+
+.left h1 {
+  margin-bottom: 10px;
+}
+
+label {
+  margin: 15px 0 5px;
+  font-size: 0.9rem;
+}
+
+.left p {
+  margin-bottom: 15px;
+}
+
+input {
+  height: 35px;
+}
+
+.accept label {
+  margin: 0;
+}
+
+.button {
+  width: 100%;
+  height: 45px;
+  background-color: black;
+  color: white;
+  font-size:1rem;
+  margin-top: 30px;
+}
+
+div .right {
+  background-image: url("Cupcake2.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 400px;
+  height: 100%;
+  border: 40px solid white;
+}
+
+@media screen and (max-width: 820px) {
+  .container {
+    width: 350px;
+  }
+  .left {
+    height: 100%;
+    width: 100%;
+  }
+  .right {
+    display: none;
+  }
+}
+	#contact {
+  padding: 5rem 0;
+  background: rgb(226, 226, 226);
+}
+		
+.container {
+  max-width: auto;
+  width: 95%;
+  margin: auto;
+}
+.contact-container {
+  display: flex;
+  background: #fff;
+}
+
+.contact-img {
+  width: 50%;
+}
+
+.contact-img img {
+  display: block;
+  height: 400px;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+}
+
+	</style>
+</head>
+
+<body>
+    <section id="contact">
+      <div class="contact-container container">
+        <div class="contact-img">
+          <img src="deco.jpg" alt="" />
+        </div>
+
+        <div class="form-container"><br>
+          <h2>Sign in</h2><br>
+<form method='POST' action='signUp.php' onsubmit="return validateForm()">
+
+Name:<br>
+	<input type='text' name='name' size="40" style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your name' required><br>
+
+Username:<br>
+	<input type='text' name='username'size="30" style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your username' required><br>
+
+Password:<br>
+	<input type='password' name='password'size="20" style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your password' required><br>
+
+
+
+E-mail:<br>
+	<input type='text' name='email'size="40" style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your E-mail' required><br>
+
+No. Tel:<br>
+	<input type='text' name='num_tel'size="20" style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your phone number' required><br>
+
+
+Address:<br>
+	<input type='text' name='address'size="50" style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your address' required><br>
+	
+	
+City:<br>
+	<input type='text' name='city'size="20" style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your city' required><br>
+	
+Poscode:<br>
+	<input type='text' name='poscode'size="5" style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your poscode' required><br>
+
+
+
+  <p align="center">
+    <input type="submit" name="Submit" value="SIGN UP">
+    <input type="reset" name="Submit2" value="RESET">
+  </p><br><br>
+
+</form>
+ 
+        </div>
+      </div>
+    </section>
+</body>
+</html>

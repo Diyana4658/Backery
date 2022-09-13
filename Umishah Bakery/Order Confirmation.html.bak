@@ -1,0 +1,67 @@
+<html>
+<head>
+<title> Order Confirmation </title>
+</head>
+<style>
+table {
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  border: 2px solid black;
+  margin-top: 10px;
+}
+
+td {
+  border: 2px solid black;
+  padding: 20px;
+  width: 100%;
+}
+
+th {
+  align: center;
+}
+</style>
+<body>
+  <table>
+    <tr> <th> <center> Order Confirmation </center> </th> <br> </tr>
+	<tr> <td> Items: </td> </tr> <br>
+	<tr> 
+	  <td> 
+	    <form name="orderForm" method="post" action="#" onsubmit="return validateForm()"> 
+	      
+		  <p> <label for="want"> Date: </label>
+          <input type="date" name="want">
+		  <p> <b> Payment method: </b>
+	      <select name='payment'>
+		    <option> Choose
+		    <option value='ot'> Online Transfer
+		    <option value='cod'> Cash on Delivery
+	      </select>
+		  <p> <b> Delivery method: </b>
+	      <select name='payment'>
+		    <option> Choose
+		    <option value='spu'> Self pick-up
+		    <option value='dbo'> Deliver by owner
+	      </select>
+		  <p> <b> Extra notes: </b> <br>
+	    <textarea name='feedback' rows='10' cols='40' style='color: grey' 	
+	    onblur="this.value = this.value || this.defaultValue; this.style.color='#000000'" 
+	    onfocus="this.value=''; this.style.color='#000'" > Any special request, please state here </textarea>
+	    <br> <br>
+		
+	    <input type='submit' name='submit' value='Place order'> </p>
+		
+	  </td>
+	</tr>
+  </table>
+
+<script>
+  const d = new Date();
+  d.setDate(d.getDate() + 3);
+  document.getElementById("demo").innerHTML = d;
+</script>
+</body>
+</html>

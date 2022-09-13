@@ -1,0 +1,1085 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Umishah Bakery</title>
+<style>
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Serif;
+}
+
+/* ///////////..utility classes../////////// */
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  text-decoration: none;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 1em;
+  text-transform: uppercase;
+  font-weight: small;
+}
+
+.btn-primary {
+  color: #fff;
+  background: #16a083;
+}
+
+.btn-primary:hover {
+  background: #117964;
+  transition: background 0.3s ease-in-out;
+}
+
+/* ............/navbar/............ *
+
+/* desktop mode............/// */
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines {
+  display: none;
+}
+
+.navbar {
+  box-shadow: 0px 5px 10px 0px #aaa;
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  opacity: 0.85;
+  height: 60px;
+  z-index: 12;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+  align-items: center;
+}
+
+.menu-items {
+  order: 2;
+  display: flex;
+}
+
+.menu-items li {
+  list-style: none;
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu-items a:hover {
+  color: #117964;
+  transition: color 0.3s ease-in-out;
+}
+
+.logo {
+  order: 1;
+  font-size: 2.3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ............//// Showcase styling ////......... */
+
+.showcase-area {
+  height: 60vh;
+  background: linear-gradient(
+      rgba(240, 240, 240, 0.144),
+      rgba(255, 255, 255, 0.336)
+    ),
+    url("bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;  
+}
+
+.showcase-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1.6rem;
+}
+
+.main-title {
+  text-transform: uppercase;
+  margin-top: 1.5em;
+  
+}
+
+/* ......//about us//...... */
+
+#about {
+  padding: 50px 0;
+  background: #f5f5f7;
+}
+
+.about-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#about h2 {
+  font-size: 2.3rem;
+}
+
+#about p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+#about .small {
+  font-size: 3.2rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.about-img {
+  flex: 1 1 400px;
+  padding: 30px;
+  transform: translateX(150%);
+  animation: about-img-animation 1s ease-in-out forwards;
+}
+
+@keyframes about-img-animation {
+  100% {
+    transform: translate(0);
+  }
+}
+
+.about-text {
+  flex: 1 1 400px;
+  padding: 30px;
+  margin: auto;
+  transform: translate(-150%);
+  animation: about-text-animation 1s ease-in-out forwards;
+}
+
+@keyframes about-text-animation {
+  100% {
+    transform: translate(0);
+  }
+}
+
+.about-img img {
+  display: block;
+  height: 400px;
+  max-width: 100%;
+  margin: auto;
+  object-fit: cover;
+  object-position: right;
+}
+
+/* ..........////Food category///........... */
+
+#food {
+  padding: 5rem 0 10rem 0;
+}
+
+#food h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.food-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.food-container img {
+  display: block;
+  width: 100%;
+  margin: auto;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.img-container {
+  margin: 0 1rem;
+  position: relative;
+}
+
+.img-content {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+  text-align: center;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+
+.img-content h3 {
+  color: #fff;
+  font-size: 2.2rem;
+}
+
+.img-content a {
+  font-size: 1.2rem;
+}
+
+.img-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.871);
+  opacity: 0;
+  z-index: 1;
+
+  transform: scaleY(0);
+  transform-origin: 100% 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.img-container:hover::after {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.img-container:hover .img-content {
+  opacity: 1;
+  top: 40%;
+}
+
+/* .........../Food Menu/............ */
+
+.food-menu-heading {
+  text-align: center;
+  font-size: 3.4rem;
+  font-weight: 400;
+  color: #666;
+}
+
+.food-menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 0px 30px 0px;
+}
+
+.food-menu-container img {
+  display: block;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.food-menu-item {
+  display: flex;
+  flex: 1 1 600px;
+  justify-content: space-evenly;
+  margin-bottom: 3rem;
+}
+
+.food-description {
+  margin: auto 1.5rem;
+}
+
+.font-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #444;
+}
+
+.food-description p {
+  font-size: 1.4rem;
+  color: #555;
+  font-weight: 500;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.food-description .food-price {
+  color: #117964;
+  font-weight: 700;
+}
+
+/* ........./ Testimonial /.......... */
+
+#testimonials {
+  padding: 5rem 0;
+  background: rgba(243, 243, 243);
+}
+
+.testimonial-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #555;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+
+.testimonial-box .checked {
+  color: #ff9529;
+}
+
+.testimonial-box .testimonial-text {
+  margin: 1rem 0;
+  color: #444;
+}
+
+.testimonial-box {
+  text-align: center;
+  padding: 1rem;
+}
+
+.customer-photo img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin: auto;
+}
+
+/* ........ Contact Us........... */
+
+#contact {
+  padding: 5rem 0;
+  background: rgb(226, 226, 226);
+}
+
+.contact-container {
+  display: flex;
+  background: #fff;
+}
+
+.contact-img {
+  width: 50%;
+}
+
+.contact-img img {
+  display: block;
+  height: 400px;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+  margin-left: 30px; 
+  margin-top: 1px;
+}
+
+.form-container {
+  padding: 1rem;
+  width: 90%;
+  margin: auto;
+}
+
+.form-container input {
+  display: block;
+  width: 45%;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  padding: 1rem 0;
+  box-shadow: none;
+  outline: none;
+  margin-bottom: 1rem;
+  color: #444;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.form-container textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  color: #444;
+  outline: none;
+  padding: 1rem 0;
+  resize: none;
+}
+
+.form-container h2 {
+  font-size: 2.7rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 1rem;
+  margin-top: -1.2rem;
+}
+
+.form-container a {
+  font-size: 1.3rem;
+}
+
+#footer h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 2.6rem;
+  font-weight: 500;
+  color: #fff;
+  background: rgb(65, 65, 65);
+
+}
+
+/* ......../ media query /.......... */
+
+@media (max-width: 768px) {
+  .navbar {
+    opacity: 0.95;
+  }
+
+  .navbar-container input[type="checkbox"],
+  .navbar-container .hamburger-lines {
+    display: block;
+  }
+
+  .navbar-container {
+    display: block;
+    position: relative;
+    height: 64px;
+  }
+
+  .navbar-container input[type="checkbox"] {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 30px;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    opacity: 0;
+  }
+
+  .navbar-container .hamburger-lines {
+    display: block;
+    height: 23px;
+    width: 35px;
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .navbar-container .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #333;
+  }
+
+  .navbar-container .hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .navbar-container .hamburger-lines .line2 {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .navbar-container .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .navbar .menu-items {
+    padding-top: 100px;
+    background: #fff;
+    height: 100vh;
+    max-width: 300px;
+    transform: translate(-150%);
+    display: flex;
+    flex-direction: column;
+    margin-left: -40px;
+    padding-left: 50px;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: 5px 0px 10px 0px #aaa;
+  }
+
+  .navbar .menu-items li {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .logo {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 2rem;
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(35deg);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-35deg);
+  }
+
+  /* ......./ food /......... */
+
+  .food-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .food-type:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  .food-type {
+    box-shadow: 5px 5px 10px 0 #aaa;
+  }
+
+  .img-container {
+    margin: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 65%;
+  }
+
+  .navbar .menu-items li{
+      font-size: 1.6rem;
+  }
+
+  .testimonial-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .food-menu-container img {
+    margin: auto;
+  }
+
+  .food-menu-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .form-container {
+    width: 90%;
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-img {
+    width: 90%;
+    margin: 3rem auto;
+  }
+
+  .logo {
+    position: absolute;
+    top: 06px;
+    right: 15px;
+    font-size: 3rem;
+  }
+
+  .navbar .menu-items li {
+    margin-bottom: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .img-container h3 {
+    font-size: 1.5rem;
+  }
+
+  .img-container .btn {
+    font-size: 0.7rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .showcase-area {
+    height: 50vmax;
+  }
+}
+
+.links,.links-hidden{
+   display: inline-block;
+   color: rgb(255, 255, 255);
+   padding: 12px 16px;
+   text-decoration: none;
+   font-size: 18px;
+   font-weight: bold;
+   align:left;
+}
+
+.links-hidden{
+   display: block;
+}
+.links{
+   display: inline-block;
+}
+.links-hidden:hover,.links:hover {
+   background-color: rgba(255, 255, 255, 0.3);
+}
+.dropdown-menu:hover .menu-content {
+   display: block;
+}
+.links-hidden:hover,.current {
+   background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+body{
+margin:0;
+overflow-x:hidden !important;
+
+}
+
+.mySlides1, .mySlides2, .mySlides3, .mySlides4, 
+.mySlides5, .mySlides6,
+.mySlides7, .mySlides8 {display: none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.button {
+  border-radius: 5px;
+  padding: 10px 15px;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  font-family: Serif;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 50%;
+}
+
+.buttons {
+  background-color: lightgrey;
+  color: black;
+  border-color: black;
+}
+
+.buttons:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+
+	  </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container container">
+          <input type="checkbox" name="" id="">
+          <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+			  <li><a href="#food-menu" target="mainFrame">Menu</a></li>
+			  <li><a href="#contact">Login</a></li>
+          </ul>
+          <h1 class="logo">Umishah Bakery</h1>
+      </div>
+  </nav>
+    <section class="showcase-area" id="showcase">
+      <div class="showcase-container">
+        <h1 class="main-title" id="home" style="color:white ; font-size:60px; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align: center;">Welcome to Our Online Shop</h1>
+        <b></b><p style="color:white; font-size:40px;">Taste first and you'll like it.</p></b>
+        <a href="#food-menu" class="btn btn-primary">Menu</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="about-wrapper container">
+        <div class="about-text">
+          <p class="small">About Us</p> <br>
+          <h2>          <p style='font-size:20px; text-align: justify;
+  text-justify: inter-word;'>
+ Hello! Here we're ready to serve you with many choices of cakes and others. We're selling cakes for birthday, engagement or any events as you can make a request for the design and choose the flavour of the cake. We also have bahulu, cupcakes, and moist cake. Check out our menu below for more details and add to cart any products you want!
+          </p></h2> <br>
+
+        </div>
+        <div class="about-img">
+          <img src="bahulu.jpg" alt="food" />
+        </div>
+      </div>
+    </section>
+    <br> <br> <br>
+    <section id="food-menu">
+      <h2 class="food-menu-heading">Food Menu</h2>
+      <div class="food-menu-container container">
+        <div class="food-menu-item">
+          <div class="food-img">
+            <div class="slideshow-container">
+          <div class="mySlides1">
+            <img src="Normal Cake 1.jpg">
+          </div>
+
+          <div class="mySlides1">
+            <img src="Normal Cake 2.jpg" >
+          </div>
+  
+          <div class="mySlides1">
+            <img src="Normal Cake 3.jpg" >
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+          </div> <br>
+          </div>
+          <div class="food-description">
+            <h2 class="food-titile" id="cake"> Normal Theme Cakes</h2>
+			<br>
+            <p>
+              For normal theme cake, we make most of the designs based on flower theme and you may choose the colour as you wish.
+            </p> <br>
+            <p class="food-price">Price: RM30++</p> <br>
+	
+          </div>
+        </div> <br>
+
+        <div class="food-menu-item">
+          <div class="food-img">
+            <div class="slideshow-container">
+          <div class="mySlides2">
+            <img src="Cake cartoon 1.jpg">
+          </div>
+
+          <div class="mySlides2">
+            <img src="Cake cartoon 2.jpg" >
+          </div>
+  
+          <div class="mySlides2">
+            <img src="Cake cartoon 3.jpg" >
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+          </div> <br>
+          </div>
+          <div class="food-description">
+            <h2 class="food-titile" id="cake">Unique Theme Cakes</h2>
+			<br>
+            <p>
+              For unique theme cake, you may choose any designs such as cartoon, marvel etc. We'll try to make one as you requested.
+            </p> <br>
+            <p class="food-price">Price: RM40++</p> <br>
+	
+          </div>
+        </div> <br>
+		
+        <div class="food-menu-item">
+          <div class="food-img">
+            <div class="slideshow-container">
+          <div class="mySlides3">
+            <img src="Bahulu 3.jpg">
+          </div>
+
+          <div class="mySlides3">
+            <img src="Bahulu 4.jpg" >
+          </div>
+  
+          <div class="mySlides3">
+            <img src="Bahulu 6.jpg" >
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+          </div> <br>
+          </div>
+          <div class="food-description">
+            <h2 class="food-titile" id="bahulu">Normal Shape Bahulu</h2> <br>
+            <p>
+              Bahulu with normal shape have different types of flavour such as original, pandan, coffee, strawberry and orange. 
+            </p> <br>
+            <p class="food-price">Price: RM5++</p> <br>
+
+          </div>
+        </div> <br>
+		
+		<div class="food-menu-item">
+          <div class="food-img">
+            <div class="slideshow-container">
+          <div class="mySlides4">
+            <img src="Bahulu 7.jpg">
+          </div>
+
+          <div class="mySlides4">
+            <img src="Bahulu 2.jpg" >
+          </div>
+  
+          <div class="mySlides4">
+            <img src="Bahulu 1.jpg" >
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
+          </div> <br>
+          </div>
+		
+			
+			
+          <div class="food-description">
+            <h2 class="food-titile" id="bahulu">Fish Shape Bahulu</h2>
+			<br>
+            <p>
+              We have fish shape bahulu with five different flavours that you can choose and there are two different size.
+            </p> <br>
+            <p class="food-price">Price: RM25++</p> <br>
+	
+          </div>
+        </div> <br>
+		
+        <div class="food-menu-item">
+          <div class="food-img">
+            <div class="slideshow-container">
+          <div class="mySlides5">
+            <img src="Moist Cake3.jpg">
+          </div>
+
+          <div class="mySlides5">
+            <img src="Moist Cake2.jpg">
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
+          </div> <br>
+          </div>
+          <div class="food-description">
+            <h2 class="food-titile" id="moist"> Cheese Moist Cake </h2>
+			<br>
+            <p>
+              This moist cake is suitable for anyone who wants to eat dessert during their free time. You can choose any size you want as we listed.
+            </p> <br>
+            <p class="food-price">Price: RM5.00++</p> <br>
+
+          </div>
+        </div> <br>
+		
+		        <div class="food-menu-item">
+          <div class="food-img">
+            <div class="slideshow-container">
+          <div class="mySlides6">
+            <img src="Moist Cake1.jpg">
+          </div>
+
+          <div class="mySlides6">
+            <img src="Moist Cake4.jpg" >
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1, 5)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 5)">&#10095;</a>
+          </div> <br>
+          </div>
+          <div class="food-description">
+            <h2 class="food-titile" id="moist"> Chocolate Moist Cake </h2> <br>
+            <p>
+              Chocolate lovers will definitely fall in love with our chocolate moist cake as we use a premium chocolate to fulfill your taste. 
+
+            </p> <br>
+            <p class="food-price">Price: RM5.00++</p> <br>
+
+          </div>
+        </div> <br>
+		
+        <div class="food-menu-item">
+          <div class="food-img">
+            <div class="slideshow-container">
+          <div class="mySlides7">
+            <img src="Cupcake2.jpg">
+          </div>
+
+          <div class="mySlides7">
+            <img src="Cupcake1.jpg" >
+          </div>
+  
+          <div class="mySlides7">
+            <img src="Cupcake3.jpg" >
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1, 6)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 6)">&#10095;</a>
+          </div> <br>
+          </div>
+          <div class="food-description">
+            <h2 class="food-titile" id="cupcake">Cupcakes</h2> <br>
+            <p>
+              You may customize the cupcake with any design and flavour that you want for any events.
+            </p> <br>
+            <p class="food-price">Price: RM3.50++</p> <br>
+	
+          </div>
+        </div> <br>
+      </div>
+		<!--<center><button class="button"><a href ="cart_interface.php"> ORDER NOW! </a> </button></center><br><br>-->
+    </section>
+	  
+
+	  <section id="contact">
+      <div class="contact-container container">
+        <div class="contact-img" > <br> <br>
+          <img src="eating_cakes.jpg" alt="" />
+        </div>
+		  
+		  
+
+       <form style="align:right; font-size: 20px;" name="f1" action = "Login.php" onsubmit = "return validation()" method = "POST">  
+        <div class="form-container" style='margin-left: 45px;'> <br> <br>
+          <h2>Log in</h2>
+	<b> Username: </b> 
+    <input type = 'text' id="user" name = 'user' size = '40' style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your username' required><br>
+
+     <b> Password: </b> <br>
+    <input type = 'password'id="pass" name = 'pass' size = '20' style = 'color:grey' 	
+	onblur="this.value = this.value || this.defaultValue; 	this.style.color 	= 	'#000000'" 
+	onfocus="this.value=''; 	this.style.color = '#000'" value = 'Enter your password' required>
+	
+		Don't have an account? <a href="Sign-upp.html">Sign up here</a><br>
+		Log in for <a href="admin.php">Admin</a><br><br>
+   
+      <input type="submit" name="Submit" value="LOG IN" style='display:inline-block;'>
+	  <input type="reset" name="reset" value="RESET" style='display:inline-block;'>
+	
+        </div>
+					</form>
+				
+      </div>
+
+ 
+    </section>
+
+
+    <footer id="footer" style="gap:0 20px;"><h2>
+ <div class="bottom_content">
+<a href="https://wa.link/2jubz1"><i></i><img src="whatsapp.png" width="65" height="65" alt=""/></a>
+<a href="https://web.facebook.com/Umishahbakery"><i></i><img src="facebook (1).png" width="65" height="65" alt=""/></a>
+<a href="https://www.instagram.com/perliscake/"><i></i><img src="instagram (1).png" width="65" height="65" alt=""/></a>
+    
+
+</div>
+   </h2> </footer> 
+   
+   <script>
+let slideIndex = [1,1,1,1,1,1,1,1];
+let slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5", "mySlides6", "mySlides7", "mySlides8"]
+showSlides(1, 0);
+showSlides(1, 1);
+showSlides(1, 2);
+showSlides(1, 3);
+showSlides(1, 4);
+showSlides(1, 5);
+showSlides(1, 6);
+showSlides(1, 7);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  let i;
+  let x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex[no]-1].style.display = "block";  
+}
+
+</script>
+  </body>
+</html>
+ 
+
+
